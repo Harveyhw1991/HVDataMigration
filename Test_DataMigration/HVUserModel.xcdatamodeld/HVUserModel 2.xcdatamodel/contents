@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1713" minimumToolsVersion="Xcode 7.0">
+    <entity name="APP" representedClassName="APP" syncable="YES">
+        <relationship name="v_user" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="uID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="v_app" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APP" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="APP" positionX="-36" positionY="27" width="128" height="58"/>
+        <element name="User" positionX="-288" positionY="-153" width="128" height="88"/>
+    </elements>
+</model>
