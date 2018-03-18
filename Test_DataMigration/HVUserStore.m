@@ -68,11 +68,12 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
             [userStore createTableWithName:HV_TABLE_INFO bySQL:CREATE_DB_INFO_SQL];
             [userStore createTableWithName:HV_TABLE_USER bySQL:CREATE_USER_TABLE_SQL];
+            [userStore hv_addDBVersion:HV_DB_DEFAULT_VERSION completion:nil];
         }else
         {
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
         }
-        [userStore hv_addDBVersion:HV_DB_DEFAULT_VERSION completion:nil];
+        
         [userStore hv_updateDBVerson];
     });
     
@@ -147,10 +148,8 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
 
 - (void)hv_updateDBVerson
 {
-    debugLog(@">>>>>11 %ld",self.dbVersion);
     self.dbVersion = [self hv_fetchDBVersion];
     
-    debugLog(@">>>>>22 %ld",self.dbVersion);
     if (self.dbVersion != HV_DB_CURRENT_VERSION) {
         
         // 1).旧表增加新的字段

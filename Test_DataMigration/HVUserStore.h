@@ -28,8 +28,6 @@ typedef void(^CompletionBlock)(NSError *error);
 + (instancetype)shareStore;
 
 
-- (NSInteger)hv_fetchDBVersion;
-
 
 /**
  *  插入用户信息
