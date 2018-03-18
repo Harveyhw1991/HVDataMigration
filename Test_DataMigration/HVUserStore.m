@@ -47,9 +47,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
-        
     });
     
     return userStore;
@@ -113,7 +111,6 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
             if (isRollBack)
             {
                 [db rollback];
-                
                 NSError* error = [NSError errorWithDomain:@"插入用户信息失败" code:0 userInfo:nil];
                 
                 if (completion) {
@@ -142,27 +139,27 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
  *
  *  @return 结果
  */
-- (BOOL)hv_addNewFieldName:(NSString *)newFieldName
-               toTableName:(NSString *)tableName
+- (BOOL)hv_addNewColumn:(NSString *)newColumnName
+            toTableName:(NSString *)tableName
 {
     if (![HVKeyValueStore checkTableName:tableName]) {
         return NO;
     }
     
     __block BOOL result;
-    NSString *sql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ TEXT",tableName,newFieldName];
+    NSString *sql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ TEXT",tableName,newColumnName];
     
     NSLog(@">>> add sql :%@",sql);
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
        
         //判断字段是否存在
-        if (![db columnExists:newFieldName inTableWithName:tableName]) {
+        if (![db columnExists:newColumnName inTableWithName:tableName]) {
             
             result = [db executeUpdate:sql];
             
             if (!result) {
-                NSLog(@">>> Error: add new field faild <<<");
+                NSLog(@">>> Error: add new Column faild <<<");
             }
             
         }

@@ -46,7 +46,7 @@ typedef void(^CompletionBlock)(NSError *error);
  *
  *  @return 结果
  */
-- (BOOL)hv_addNewFieldName:(NSString *)newFieldName
+- (BOOL)hv_addNewColumn:(NSString *)newFieldName
                toTableName:(NSString *)tableName;
 
 

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HVUserStore.h"
+#import <FMDBMigrationManager.h>
 
 
 @interface ViewController ()
@@ -20,11 +21,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    /*
+     数据库的迁移无非是：
+     
+     1.新增数据库（没有路径的情况）
+     
+     2.新增表
+     
+     3.增加字段
+     
+     4.删除字段（sqlit3不支持字段的删除）
+     
+     */
+    
+    
 
     HVUserStore *userStore = [HVUserStore shareStore];
-    
     [userStore createTableWithName:HV_TABLE_USER];
-    
     
     //**** 1. sqlite 插入模拟数据 *****
     
@@ -39,7 +52,6 @@
         [userStore hv_insertUser:user  completion:^(NSError *error) {
            
             if (!error) {
-                
                 NSLog(@">>> inser user success <<<");
             }
         }];
@@ -51,11 +63,11 @@
     
     // 1).旧表增加新的字段
     
-    // ALTER TABLE 表名 ADD 字段名  字段类型;
+    // ALTER TABLE 表名 ADD 字段名 字段类型;
     
-    [userStore hv_addNewFieldName:@"uEmail" toTableName:HV_TABLE_USER];
+    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
     
-    [userStore hv_addNewFieldName:@"uRemark" toTableName:HV_TABLE_USER];
+    [userStore hv_addNewColumn:@"uRemark" toTableName:HV_TABLE_USER];
     
     
     // 2).重命名表
@@ -80,6 +92,26 @@
      
      */
     
+
+#pragma mark - 使用FMDBMigrationManager 进行数据库迁移
+    
+//    FMDBMigrationManager *dbManager = [FMDBMigrationManager managerWithDatabaseAtPath:PATH_OF_DOCUMENT migrationsBundle:[NSBundle mainBundle]];
+//
+//    BOOL resultState = NO;
+//    NSError *error = nil;
+//    if (!dbManager.hasMigrationsTable) {
+//        resultState = [dbManager createMigrationsTable:&error];
+//        debugLog(@">>> resultState %d",resultState);
+//    }
+//
+//    resultState = [dbManager migrateDatabaseToVersion:UINT64_MAX progress:nil error:&error];
+//
+//    debugLog(@"Has `schema_migrations` table?: %@", dbManager.hasMigrationsTable ? @"YES" : @"NO");
+//    debugLog(@"Origin Version: %llu", dbManager.originVersion);
+//    debugLog(@"Current version: %llu", dbManager.currentVersion);
+//    debugLog(@"All migrations: %@", dbManager.migrations);
+//    debugLog(@"Applied versions: %@", dbManager.appliedVersions);
+//    debugLog(@"Pending versions: %@", dbManager.pendingVersions);
     
 
     
