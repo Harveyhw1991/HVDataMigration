@@ -17,7 +17,7 @@
 @end
 
 
-
+static NSString *const HV_TABLE_INFO    = @"DB_INFO";
 static NSString *const HV_TABLE_USER    = @"userInfo";
 static NSString *const HV_TABLE_NEWUSER = @"newUserInfo";
 
@@ -26,6 +26,9 @@ typedef void(^CompletionBlock)(NSError *error);
 @interface HVUserStore : HVKeyValueStore
 
 + (instancetype)shareStore;
+
+
+- (NSInteger)hv_fetchDBVersion;
 
 
 /**

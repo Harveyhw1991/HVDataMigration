@@ -37,7 +37,6 @@
     
 
     HVUserStore *userStore = [HVUserStore shareStore];
-    [userStore createTableWithName:HV_TABLE_USER];
     
     //**** 1. sqlite 插入模拟数据 *****
     
@@ -58,23 +57,22 @@
     }
     
 
-    /****  2.sqlite 增加新的字段,重命名表 ****/
-     
-    
-    // 1).旧表增加新的字段
-    
-    // ALTER TABLE 表名 ADD 字段名 字段类型;
-    
-    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
-    
-    [userStore hv_addNewColumn:@"uRemark" toTableName:HV_TABLE_USER];
-    
-    
-    // 2).重命名表
-    
-    // ALTER TABLE 表名 RENAME TO 新表名;
-    
-    [userStore hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
+//    /****  2.sqlite 增加新的字段,重命名表 ****/
+//     
+//    // 1).旧表增加新的字段
+//    
+//    // ALTER TABLE 表名 ADD 字段名 字段类型;
+//    
+//    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
+//    
+//    [userStore hv_addNewColumn:@"uRemark" toTableName:HV_TABLE_USER];
+//    
+//    
+//    // 2).重命名表
+//    
+//    // ALTER TABLE 表名 RENAME TO 新表名;
+//    
+//    [userStore hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
     
  
     

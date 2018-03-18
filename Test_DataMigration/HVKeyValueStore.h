@@ -36,7 +36,7 @@
 
 @interface HVKeyValueStore : NSObject
 
-@property (strong, nonatomic) FMDatabaseQueue *dbQueue;
+@property (strong, nonatomic, readonly) FMDatabaseQueue *dbQueue;
 
 + (BOOL)checkTableName:(NSString *)tableName;
 
