@@ -17,6 +17,7 @@
 		3D8960891CDAE42600C084E9 /* HVKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */; };
 		3D8960921CDAE5D700C084E9 /* HVUserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960911CDAE5D700C084E9 /* HVUserStore.m */; };
 		3D8960B11CDC50E100C084E9 /* HVUserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960AF1CDC50E100C084E9 /* HVUserModel.xcdatamodeld */; };
+		B9A2780E205FFB6F00DB4807 /* HVFMDBMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		3D8960B01CDC50E100C084E9 /* HVUserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HVUserModel.xcdatamodel; sourceTree = "<group>"; };
 		3D8960B21CDC511700C084E9 /* HVUserModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HVUserModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		3FED3E12EC0B03BF29AAA72F /* libPods-Test_DataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test_DataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9A2780C205FFB6E00DB4807 /* HVFMDBMigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVFMDBMigration.h; sourceTree = "<group>"; };
+		B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HVFMDBMigration.m; sourceTree = "<group>"; };
 		E4004BD28E3A99C9B79E249E /* Pods-Test_DataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_DataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration.release.xcconfig"; sourceTree = "<group>"; };
 		F3F408299968A167EC3A1FD0 /* Pods-Test_DataMigration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_DataMigration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +125,8 @@
 				3D8960581CDAE21A00C084E9 /* AppDelegate.m */,
 				3D89605A1CDAE21A00C084E9 /* ViewController.h */,
 				3D89605B1CDAE21A00C084E9 /* ViewController.m */,
+				B9A2780C205FFB6E00DB4807 /* HVFMDBMigration.h */,
+				B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */,
 				3D8960901CDAE5D700C084E9 /* HVUserStore.h */,
 				3D8960911CDAE5D700C084E9 /* HVUserStore.m */,
 				3D8960871CDAE42600C084E9 /* HVKeyValueStore.h */,
@@ -340,6 +345,7 @@
 				3D89605C1CDAE21A00C084E9 /* ViewController.m in Sources */,
 				3D8960891CDAE42600C084E9 /* HVKeyValueStore.m in Sources */,
 				3D8960591CDAE21A00C084E9 /* AppDelegate.m in Sources */,
+				B9A2780E205FFB6F00DB4807 /* HVFMDBMigration.m in Sources */,
 				3D8960921CDAE5D700C084E9 /* HVUserStore.m in Sources */,
 				3D8960561CDAE21A00C084E9 /* main.m in Sources */,
 			);

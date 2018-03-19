@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HVUserStore.h"
+#import "HVFMDBMigration.h"
 #import <FMDBMigrationManager.h>
 
 
@@ -33,7 +34,6 @@
      4.删除字段（sqlit3不支持字段的删除）
      
      */
-    
     
 
     HVUserStore *userStore = [HVUserStore shareStore];
@@ -93,23 +93,39 @@
 
 #pragma mark - 使用FMDBMigrationManager 进行数据库迁移
     
-//    FMDBMigrationManager *dbManager = [FMDBMigrationManager managerWithDatabaseAtPath:PATH_OF_DOCUMENT migrationsBundle:[NSBundle mainBundle]];
-//
-//    BOOL resultState = NO;
-//    NSError *error = nil;
-//    if (!dbManager.hasMigrationsTable) {
-//        resultState = [dbManager createMigrationsTable:&error];
-//        debugLog(@">>> resultState %d",resultState);
-//    }
-//
-//    resultState = [dbManager migrateDatabaseToVersion:UINT64_MAX progress:nil error:&error];
-//
-//    debugLog(@"Has `schema_migrations` table?: %@", dbManager.hasMigrationsTable ? @"YES" : @"NO");
-//    debugLog(@"Origin Version: %llu", dbManager.originVersion);
-//    debugLog(@"Current version: %llu", dbManager.currentVersion);
-//    debugLog(@"All migrations: %@", dbManager.migrations);
-//    debugLog(@"Applied versions: %@", dbManager.appliedVersions);
-//    debugLog(@"Pending versions: %@", dbManager.pendingVersions);
+    FMDBMigrationManager *dbManager = [FMDBMigrationManager managerWithDatabaseAtPath:[HVUserStore hv_dbPath] migrationsBundle:[NSBundle mainBundle]];
+
+    BOOL resultState = NO;
+    NSError *error = nil;
+    if (!dbManager.hasMigrationsTable) {
+        resultState = [dbManager createMigrationsTable:&error];
+        debugLog(@">>> resultState %d",resultState);
+    }
+    
+    HVFMDBMigration *migration_1 = [HVFMDBMigration migrationWithName:@"新增User表"
+                                                              verison:1
+                                                       executeUpdates:@[@"create table if not exists User(name text,age integer,sex text,phoneNum text)"]];
+    HVFMDBMigration *migration_2 = [HVFMDBMigration migrationWithName:@"User表新增字段email"
+                                                              verison:2
+                                                       executeUpdates:@[@"alter table User add email text"]];
+    HVFMDBMigration *migration_3 = [HVFMDBMigration migrationWithName:@"User表新增字段address"
+                                                              verison:3
+                                                       executeUpdates:@[@"alter table User add address text"]];
+    HVFMDBMigration *migration_4 = [HVFMDBMigration migrationWithName:@"User换名NewUser"
+                                                             verison:4
+                                                      executeUpdates:@[@"alter table User rename to NewUser"]];
+    
+    [dbManager addMigrations:@[migration_1,migration_2,migration_3,migration_4]];
+    
+
+    resultState = [dbManager migrateDatabaseToVersion:UINT64_MAX progress:nil error:&error];
+
+    debugLog(@"Has `schema_migrations` table?: %@", dbManager.hasMigrationsTable ? @"YES" : @"NO");
+    debugLog(@"Origin Version: %llu", dbManager.originVersion);
+    debugLog(@"Current version: %llu", dbManager.currentVersion);
+    debugLog(@"All migrations: %@", dbManager.migrations);
+    debugLog(@"Applied versions: %@", dbManager.appliedVersions);
+    debugLog(@"Pending versions: %@", dbManager.pendingVersions);
     
 
     

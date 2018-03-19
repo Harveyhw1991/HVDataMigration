@@ -23,7 +23,7 @@
 @end
 
 @interface HVUserStore ()
-@property (nonatomic, copy) NSString *usrInfoName;
+@property (nonatomic, copy) NSString *userInfo;
 @property (nonatomic, assign) NSInteger dbVersion;
 @end
 
@@ -70,7 +70,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
             [userStore createTableWithName:HV_TABLE_DB_INFO bySQL:CREATE_DB_INFO_SQL];
             [userStore createTableWithName:HV_TABLE_USER bySQL:CREATE_USER_TABLE_SQL];
-            [userStore hv_addDBVersion:HV_DB_DEFAULT_VERSION completion:nil];
+            [userStore hv_setDBVersion:HV_DB_DEFAULT_VERSION completion:nil];
         }else
         {
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
@@ -117,13 +117,13 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
             version = HV_DB_DEFAULT_VERSION;
         }
     }];
-    self.dbVersion   = version;
-    self.usrInfoName = usrInfo;
+    self.dbVersion = version;
+    self.userInfo  = usrInfo;
     
     return version;
 }
 
-- (void)hv_addDBVersion:(NSInteger)version
+- (void)hv_setDBVersion:(NSInteger)version
              completion:(CompletionBlock)completion
 {
     if (version <=0) {
@@ -144,7 +144,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
 
 - (void)hv_updateDBVerson
 {
-    if (self.dbVersion != HV_DB_CURRENT_VERSION) {
+    if (self.dbVersion < HV_DB_CURRENT_VERSION) {
         
         // 1).旧表增加新的字段
         
@@ -159,7 +159,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
 
 
         // 更新数据库的最新版本号
-        [self hv_addDBVersion:HV_DB_CURRENT_VERSION completion:nil];
+        [self hv_setDBVersion:HV_DB_CURRENT_VERSION completion:nil];
     }
 }
 

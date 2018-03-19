@@ -24,7 +24,7 @@ typedef void(^CompletionBlock)(NSError *error);
 @interface HVUserStore : HVKeyValueStore
 
 + (instancetype)shareStore;
-
++ (NSString *)hv_dbPath;
 
 
 /**
