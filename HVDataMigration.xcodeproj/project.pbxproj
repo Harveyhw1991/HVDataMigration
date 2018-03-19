@@ -16,6 +16,9 @@
 		3D8960641CDAE21A00C084E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8960621CDAE21A00C084E9 /* LaunchScreen.storyboard */; };
 		3D8960891CDAE42600C084E9 /* HVKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */; };
 		3D8960921CDAE5D700C084E9 /* HVUserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960911CDAE5D700C084E9 /* HVUserStore.m */; };
+		B928706E20602EFF00AD4BFF /* HVStudentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B928706C20602EFF00AD4BFF /* HVStudentModel.xcdatamodeld */; };
+		B9287073206030A500AD4BFF /* Student+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B9287071206030A500AD4BFF /* Student+CoreDataClass.m */; };
+		B9287074206030A500AD4BFF /* Student+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B9287072206030A500AD4BFF /* Student+CoreDataProperties.m */; };
 		B9A2780E205FFB6F00DB4807 /* HVFMDBMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */; };
 		FAED07688CC0683BB2387F5E /* libPods-HVDataMigration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,11 @@
 		3D8960911CDAE5D700C084E9 /* HVUserStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVUserStore.m; sourceTree = "<group>"; };
 		3FED3E12EC0B03BF29AAA72F /* libPods-HVDataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HVDataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.release.xcconfig"; sourceTree = "<group>"; };
+		B928706D20602EFF00AD4BFF /* HVStudentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HVStudentModel.xcdatamodel; sourceTree = "<group>"; };
+		B928706F206030A500AD4BFF /* Student+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B9287070206030A500AD4BFF /* Student+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Student+CoreDataClass.h"; sourceTree = "<group>"; };
+		B9287071206030A500AD4BFF /* Student+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataClass.m"; sourceTree = "<group>"; };
+		B9287072206030A500AD4BFF /* Student+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B9A2780C205FFB6E00DB4807 /* HVFMDBMigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVFMDBMigration.h; sourceTree = "<group>"; };
 		B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HVFMDBMigration.m; sourceTree = "<group>"; };
 		E4004BD28E3A99C9B79E249E /* Pods-HVDataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +133,10 @@
 		3D8960531CDAE21A00C084E9 /* HVDataMigration */ = {
 			isa = PBXGroup;
 			children = (
+				B928706F206030A500AD4BFF /* Student+CoreDataProperties.h */,
+				B9287070206030A500AD4BFF /* Student+CoreDataClass.h */,
+				B9287071206030A500AD4BFF /* Student+CoreDataClass.m */,
+				B9287072206030A500AD4BFF /* Student+CoreDataProperties.m */,
 				3D8960571CDAE21A00C084E9 /* AppDelegate.h */,
 				3D8960581CDAE21A00C084E9 /* AppDelegate.m */,
 				3D89605A1CDAE21A00C084E9 /* ViewController.h */,
@@ -135,6 +147,7 @@
 				3D8960911CDAE5D700C084E9 /* HVUserStore.m */,
 				3D8960871CDAE42600C084E9 /* HVKeyValueStore.h */,
 				3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */,
+				B928706C20602EFF00AD4BFF /* HVStudentModel.xcdatamodeld */,
 				3D89605D1CDAE21A00C084E9 /* Main.storyboard */,
 				3D8960601CDAE21A00C084E9 /* Assets.xcassets */,
 				3D8960621CDAE21A00C084E9 /* LaunchScreen.storyboard */,
@@ -347,9 +360,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D89605C1CDAE21A00C084E9 /* ViewController.m in Sources */,
+				B928706E20602EFF00AD4BFF /* HVStudentModel.xcdatamodeld in Sources */,
 				3D8960891CDAE42600C084E9 /* HVKeyValueStore.m in Sources */,
 				3D8960591CDAE21A00C084E9 /* AppDelegate.m in Sources */,
+				B9287074206030A500AD4BFF /* Student+CoreDataProperties.m in Sources */,
 				B9A2780E205FFB6F00DB4807 /* HVFMDBMigration.m in Sources */,
+				B9287073206030A500AD4BFF /* Student+CoreDataClass.m in Sources */,
 				3D8960921CDAE5D700C084E9 /* HVUserStore.m in Sources */,
 				3D8960561CDAE21A00C084E9 /* main.m in Sources */,
 			);
@@ -618,6 +634,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B928706C20602EFF00AD4BFF /* HVStudentModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B928706D20602EFF00AD4BFF /* HVStudentModel.xcdatamodel */,
+			);
+			currentVersion = B928706D20602EFF00AD4BFF /* HVStudentModel.xcdatamodel */;
+			path = HVStudentModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D8960491CDAE21A00C084E9 /* Project object */;
 }
