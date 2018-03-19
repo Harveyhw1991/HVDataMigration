@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "HVUserStore.h"
 #import "HVFMDBMigration.h"
-#import <FMDBMigrationManager.h>
 
 
 @interface ViewController ()
