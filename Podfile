@@ -1,4 +1,4 @@
 platform :ios, '7.0'
-target 'Test_DataMigration'
+target 'HVDataMigration'
 pod 'FMDB', '~> 2.7.2'
 pod 'FMDBMigrationManager'

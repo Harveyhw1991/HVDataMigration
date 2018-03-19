@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "081242421F3779BD98A305713A8E6D71"
-               BlueprintName = "Pods-Test_DataMigration"
+               BlueprintIdentifier = "F8B5C0AD679728182F78F3D46807D153"
+               BlueprintName = "Pods-HVDataMigration"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-Test_DataMigration.a">
+               BuildableName = "libPods-HVDataMigration.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -18,6 +18,7 @@
 		3D8960921CDAE5D700C084E9 /* HVUserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960911CDAE5D700C084E9 /* HVUserStore.m */; };
 		3D8960B11CDC50E100C084E9 /* HVUserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960AF1CDC50E100C084E9 /* HVUserModel.xcdatamodeld */; };
 		B9A2780E205FFB6F00DB4807 /* HVFMDBMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */; };
+		FAED07688CC0683BB2387F5E /* libPods-HVDataMigration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D8960511CDAE21A00C084E9 /* Test_DataMigration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_DataMigration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D8960511CDAE21A00C084E9 /* HVDataMigration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HVDataMigration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8960551CDAE21A00C084E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D8960571CDAE21A00C084E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D8960581CDAE21A00C084E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,8 +49,8 @@
 		3D8960601CDAE21A00C084E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D8960631CDAE21A00C084E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8960651CDAE21A00C084E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D89606A1CDAE21A00C084E9 /* Test_DataMigrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test_DataMigrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D8960751CDAE21A00C084E9 /* Test_DataMigrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test_DataMigrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D89606A1CDAE21A00C084E9 /* HVDataMigrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HVDataMigrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D8960751CDAE21A00C084E9 /* HVDataMigrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HVDataMigrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8960871CDAE42600C084E9 /* HVKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVKeyValueStore.h; sourceTree = "<group>"; };
 		3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVKeyValueStore.m; sourceTree = "<group>"; };
 		3D8960901CDAE5D700C084E9 /* HVUserStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVUserStore.h; sourceTree = "<group>"; };
@@ -57,10 +58,13 @@
 		3D8960B01CDC50E100C084E9 /* HVUserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HVUserModel.xcdatamodel; sourceTree = "<group>"; };
 		3D8960B21CDC511700C084E9 /* HVUserModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HVUserModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		3FED3E12EC0B03BF29AAA72F /* libPods-Test_DataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test_DataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.release.xcconfig"; sourceTree = "<group>"; };
 		B9A2780C205FFB6E00DB4807 /* HVFMDBMigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVFMDBMigration.h; sourceTree = "<group>"; };
 		B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HVFMDBMigration.m; sourceTree = "<group>"; };
 		E4004BD28E3A99C9B79E249E /* Pods-Test_DataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_DataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration.release.xcconfig"; sourceTree = "<group>"; };
 		F3F408299968A167EC3A1FD0 /* Pods-Test_DataMigration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_DataMigration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration.debug.xcconfig"; sourceTree = "<group>"; };
+		F5A40893801B2D75068D9680 /* Pods-HVDataMigration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.debug.xcconfig"; sourceTree = "<group>"; };
+		FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HVDataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9EE12987242D308781430C /* libPods-Test_DataMigration.a in Frameworks */,
+				FAED07688CC0683BB2387F5E /* libPods-HVDataMigration.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,8 @@
 			children = (
 				F3F408299968A167EC3A1FD0 /* Pods-Test_DataMigration.debug.xcconfig */,
 				E4004BD28E3A99C9B79E249E /* Pods-Test_DataMigration.release.xcconfig */,
+				F5A40893801B2D75068D9680 /* Pods-HVDataMigration.debug.xcconfig */,
+				47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -101,7 +108,7 @@
 		3D8960481CDAE21A00C084E9 = {
 			isa = PBXGroup;
 			children = (
-				3D8960531CDAE21A00C084E9 /* Test_DataMigration */,
+				3D8960531CDAE21A00C084E9 /* HVDataMigration */,
 				3D8960521CDAE21A00C084E9 /* Products */,
 				0B5B14618872DA0F824CC912 /* Pods */,
 				8002C9B7B726CC57F74E3093 /* Frameworks */,
@@ -111,14 +118,14 @@
 		3D8960521CDAE21A00C084E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D8960511CDAE21A00C084E9 /* Test_DataMigration.app */,
-				3D89606A1CDAE21A00C084E9 /* Test_DataMigrationTests.xctest */,
-				3D8960751CDAE21A00C084E9 /* Test_DataMigrationUITests.xctest */,
+				3D8960511CDAE21A00C084E9 /* HVDataMigration.app */,
+				3D89606A1CDAE21A00C084E9 /* HVDataMigrationTests.xctest */,
+				3D8960751CDAE21A00C084E9 /* HVDataMigrationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3D8960531CDAE21A00C084E9 /* Test_DataMigration */ = {
+		3D8960531CDAE21A00C084E9 /* HVDataMigration */ = {
 			isa = PBXGroup;
 			children = (
 				3D8960571CDAE21A00C084E9 /* AppDelegate.h */,
@@ -138,7 +145,7 @@
 				3D8960651CDAE21A00C084E9 /* Info.plist */,
 				3D8960541CDAE21A00C084E9 /* Supporting Files */,
 			);
-			path = Test_DataMigration;
+			path = HVDataMigration;
 			sourceTree = "<group>";
 		};
 		3D8960541CDAE21A00C084E9 /* Supporting Files */ = {
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				3FED3E12EC0B03BF29AAA72F /* libPods-Test_DataMigration.a */,
+				FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D8960501CDAE21A00C084E9 /* Test_DataMigration */ = {
+		3D8960501CDAE21A00C084E9 /* HVDataMigration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D89607E1CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "Test_DataMigration" */;
+			buildConfigurationList = 3D89607E1CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "HVDataMigration" */;
 			buildPhases = (
 				19661F1A866427E8C5553A18 /* [CP] Check Pods Manifest.lock */,
 				3D89604D1CDAE21A00C084E9 /* Sources */,
@@ -175,14 +183,14 @@
 			);
 			dependencies = (
 			);
-			name = Test_DataMigration;
+			name = HVDataMigration;
 			productName = Test_DataMigration;
-			productReference = 3D8960511CDAE21A00C084E9 /* Test_DataMigration.app */;
+			productReference = 3D8960511CDAE21A00C084E9 /* HVDataMigration.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D8960691CDAE21A00C084E9 /* Test_DataMigrationTests */ = {
+		3D8960691CDAE21A00C084E9 /* HVDataMigrationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D8960811CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "Test_DataMigrationTests" */;
+			buildConfigurationList = 3D8960811CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "HVDataMigrationTests" */;
 			buildPhases = (
 				3D8960661CDAE21A00C084E9 /* Sources */,
 				3D8960671CDAE21A00C084E9 /* Frameworks */,
@@ -193,14 +201,14 @@
 			dependencies = (
 				3D89606C1CDAE21A00C084E9 /* PBXTargetDependency */,
 			);
-			name = Test_DataMigrationTests;
+			name = HVDataMigrationTests;
 			productName = Test_DataMigrationTests;
-			productReference = 3D89606A1CDAE21A00C084E9 /* Test_DataMigrationTests.xctest */;
+			productReference = 3D89606A1CDAE21A00C084E9 /* HVDataMigrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3D8960741CDAE21A00C084E9 /* Test_DataMigrationUITests */ = {
+		3D8960741CDAE21A00C084E9 /* HVDataMigrationUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D8960841CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "Test_DataMigrationUITests" */;
+			buildConfigurationList = 3D8960841CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "HVDataMigrationUITests" */;
 			buildPhases = (
 				3D8960711CDAE21A00C084E9 /* Sources */,
 				3D8960721CDAE21A00C084E9 /* Frameworks */,
@@ -211,9 +219,9 @@
 			dependencies = (
 				3D8960771CDAE21A00C084E9 /* PBXTargetDependency */,
 			);
-			name = Test_DataMigrationUITests;
+			name = HVDataMigrationUITests;
 			productName = Test_DataMigrationUITests;
-			productReference = 3D8960751CDAE21A00C084E9 /* Test_DataMigrationUITests.xctest */;
+			productReference = 3D8960751CDAE21A00C084E9 /* HVDataMigrationUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D89604C1CDAE21A00C084E9 /* Build configuration list for PBXProject "Test_DataMigration" */;
+			buildConfigurationList = 3D89604C1CDAE21A00C084E9 /* Build configuration list for PBXProject "HVDataMigration" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,9 +259,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D8960501CDAE21A00C084E9 /* Test_DataMigration */,
-				3D8960691CDAE21A00C084E9 /* Test_DataMigrationTests */,
-				3D8960741CDAE21A00C084E9 /* Test_DataMigrationUITests */,
+				3D8960501CDAE21A00C084E9 /* HVDataMigration */,
+				3D8960691CDAE21A00C084E9 /* HVDataMigrationTests */,
+				3D8960741CDAE21A00C084E9 /* HVDataMigrationUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		19661F1A866427E8C5553A18 /* [CP] Check Pods Manifest.lock */ = {
@@ -312,7 +320,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Test_DataMigration-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HVDataMigration-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,7 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -370,12 +378,12 @@
 /* Begin PBXTargetDependency section */
 		3D89606C1CDAE21A00C084E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D8960501CDAE21A00C084E9 /* Test_DataMigration */;
+			target = 3D8960501CDAE21A00C084E9 /* HVDataMigration */;
 			targetProxy = 3D89606B1CDAE21A00C084E9 /* PBXContainerItemProxy */;
 		};
 		3D8960771CDAE21A00C084E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D8960501CDAE21A00C084E9 /* Test_DataMigration */;
+			target = 3D8960501CDAE21A00C084E9 /* HVDataMigration */;
 			targetProxy = 3D8960761CDAE21A00C084E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -500,7 +508,7 @@
 		};
 		3D89607F1CDAE21A00C084E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3F408299968A167EC3A1FD0 /* Pods-Test_DataMigration.debug.xcconfig */;
+			baseConfigurationReference = F5A40893801B2D75068D9680 /* Pods-HVDataMigration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -514,7 +522,7 @@
 		};
 		3D8960801CDAE21A00C084E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4004BD28E3A99C9B79E249E /* Pods-Test_DataMigration.release.xcconfig */;
+			baseConfigurationReference = 47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -534,7 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.william.Test-KeyValueStoreTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Test_DataMigration.app/Test_DataMigration";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HVDataMigration.app/HVDataMigration";
 			};
 			name = Debug;
 		};
@@ -546,7 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.william.Test-KeyValueStoreTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Test_DataMigration.app/Test_DataMigration";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HVDataMigration.app/HVDataMigration";
 			};
 			name = Release;
 		};
@@ -577,7 +585,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D89604C1CDAE21A00C084E9 /* Build configuration list for PBXProject "Test_DataMigration" */ = {
+		3D89604C1CDAE21A00C084E9 /* Build configuration list for PBXProject "HVDataMigration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D89607C1CDAE21A00C084E9 /* Debug */,
@@ -586,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D89607E1CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "Test_DataMigration" */ = {
+		3D89607E1CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "HVDataMigration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D89607F1CDAE21A00C084E9 /* Debug */,
@@ -595,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D8960811CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "Test_DataMigrationTests" */ = {
+		3D8960811CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "HVDataMigrationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D8960821CDAE21A00C084E9 /* Debug */,
@@ -604,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D8960841CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "Test_DataMigrationUITests" */ = {
+		3D8960841CDAE21A00C084E9 /* Build configuration list for PBXNativeTarget "HVDataMigrationUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D8960851CDAE21A00C084E9 /* Debug */,

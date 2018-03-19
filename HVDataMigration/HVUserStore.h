@@ -1,6 +1,6 @@
 //
 //  HVUserStore.h
-//  Test_DataMigration
+//  HVDataMigration
 //
 //  Created by Harvey Huang on 16/5/5.
 //  Copyright © 2016年 Harvey Huang. All rights reserved.
