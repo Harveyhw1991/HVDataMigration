@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     /*
-     数据库的迁移无非是：
+     数据库的迁移主要是以下4种情况：
      
      1.新增数据库（没有路径的情况）
      
@@ -46,7 +46,7 @@
         
         user.uId    = [NSString stringWithFormat:@"800%ld",(long)i];
         user.uName  = [NSString stringWithFormat:@"程序猿111_%ld",(long)i];
-        //user.uEmail = [NSString stringWithFormat:@"hhhh_%ld@163.com",(long)i];
+        user.uEmail = [NSString stringWithFormat:@"hhhh_%ld@163.com",(long)i];
     
         [userStore hv_insertUser:user  completion:^(NSError *error) {
            
@@ -57,22 +57,21 @@
     }
     
 
-//    /****  2.sqlite 增加新的字段,重命名表 ****/
-//     
-//    // 1).旧表增加新的字段
-//    
-//    // ALTER TABLE 表名 ADD 字段名 字段类型;
-//    
-//    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
-//    
-//    [userStore hv_addNewColumn:@"uRemark" toTableName:HV_TABLE_USER];
-//    
-//    
-//    // 2).重命名表
-//    
-//    // ALTER TABLE 表名 RENAME TO 新表名;
-//    
-//    [userStore hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
+    /****  2.sqlite 增加新的字段,重命名表 ****/
+    
+    // 1).旧表增加新的字段
+    
+    // ALTER TABLE 表名 ADD 字段名 字段类型;
+    
+    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
+    
+    
+    
+    // 2).重命名表
+    
+    // ALTER TABLE 表名 RENAME TO 新表名;
+    
+    [userStore hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
     
  
     
@@ -91,7 +90,7 @@
      */
     
 
-#pragma mark - 使用FMDBMigrationManager 进行数据库迁移
+#pragma mark - FMDBMigrationManager 进行数据库迁移
     
     FMDBMigrationManager *dbManager = [FMDBMigrationManager managerWithDatabaseAtPath:[HVUserStore hv_dbPath] migrationsBundle:[NSBundle mainBundle]];
 

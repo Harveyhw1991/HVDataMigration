@@ -52,7 +52,7 @@ uName  TEXT NOT NULL, \
 PRIMARY KEY(uId)) \
 ";
 
-static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
+static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
 
 
 #pragma mark - userStore
@@ -213,7 +213,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
             
             NSString *sql = [NSString stringWithFormat:REPLACE_USER_SQL,HV_TABLE_NEWUSER];
             
-            BOOL result = [db executeUpdate:sql,user.uId,user.uName];
+            BOOL result = [db executeUpdate:sql,user.uId,user.uName,user.uEmail];
             
             if (!result)
             {

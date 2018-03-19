@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A9EE12987242D308781430C /* libPods-Test_DataMigration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED3E12EC0B03BF29AAA72F /* libPods-Test_DataMigration.a */; };
+		2A9EE12987242D308781430C /* libPods-HVDataMigration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FED3E12EC0B03BF29AAA72F /* libPods-HVDataMigration.a */; };
 		3D8960561CDAE21A00C084E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960551CDAE21A00C084E9 /* main.m */; };
 		3D8960591CDAE21A00C084E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960581CDAE21A00C084E9 /* AppDelegate.m */; };
 		3D89605C1CDAE21A00C084E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D89605B1CDAE21A00C084E9 /* ViewController.m */; };
@@ -27,14 +27,14 @@
 			containerPortal = 3D8960491CDAE21A00C084E9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3D8960501CDAE21A00C084E9;
-			remoteInfo = Test_DataMigration;
+			remoteInfo = HVDataMigration;
 		};
 		3D8960761CDAE21A00C084E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3D8960491CDAE21A00C084E9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3D8960501CDAE21A00C084E9;
-			remoteInfo = Test_DataMigration;
+			remoteInfo = HVDataMigration;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,12 +57,12 @@
 		3D8960911CDAE5D700C084E9 /* HVUserStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVUserStore.m; sourceTree = "<group>"; };
 		3D8960B01CDC50E100C084E9 /* HVUserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HVUserModel.xcdatamodel; sourceTree = "<group>"; };
 		3D8960B21CDC511700C084E9 /* HVUserModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HVUserModel 2.xcdatamodel"; sourceTree = "<group>"; };
-		3FED3E12EC0B03BF29AAA72F /* libPods-Test_DataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test_DataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FED3E12EC0B03BF29AAA72F /* libPods-HVDataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HVDataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.release.xcconfig"; sourceTree = "<group>"; };
 		B9A2780C205FFB6E00DB4807 /* HVFMDBMigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVFMDBMigration.h; sourceTree = "<group>"; };
 		B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HVFMDBMigration.m; sourceTree = "<group>"; };
-		E4004BD28E3A99C9B79E249E /* Pods-Test_DataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_DataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration.release.xcconfig"; sourceTree = "<group>"; };
-		F3F408299968A167EC3A1FD0 /* Pods-Test_DataMigration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_DataMigration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test_DataMigration/Pods-Test_DataMigration.debug.xcconfig"; sourceTree = "<group>"; };
+		E4004BD28E3A99C9B79E249E /* Pods-HVDataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.release.xcconfig"; sourceTree = "<group>"; };
+		F3F408299968A167EC3A1FD0 /* Pods-HVDataMigration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A40893801B2D75068D9680 /* Pods-HVDataMigration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.debug.xcconfig"; sourceTree = "<group>"; };
 		FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HVDataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9EE12987242D308781430C /* libPods-Test_DataMigration.a in Frameworks */,
+				2A9EE12987242D308781430C /* libPods-HVDataMigration.a in Frameworks */,
 				FAED07688CC0683BB2387F5E /* libPods-HVDataMigration.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,8 +97,8 @@
 		0B5B14618872DA0F824CC912 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F3F408299968A167EC3A1FD0 /* Pods-Test_DataMigration.debug.xcconfig */,
-				E4004BD28E3A99C9B79E249E /* Pods-Test_DataMigration.release.xcconfig */,
+				F3F408299968A167EC3A1FD0 /* Pods-HVDataMigration.debug.xcconfig */,
+				E4004BD28E3A99C9B79E249E /* Pods-HVDataMigration.release.xcconfig */,
 				F5A40893801B2D75068D9680 /* Pods-HVDataMigration.debug.xcconfig */,
 				47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */,
 			);
@@ -159,7 +159,7 @@
 		8002C9B7B726CC57F74E3093 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FED3E12EC0B03BF29AAA72F /* libPods-Test_DataMigration.a */,
+				3FED3E12EC0B03BF29AAA72F /* libPods-HVDataMigration.a */,
 				FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */,
 			);
 			name = Frameworks;
@@ -184,7 +184,7 @@
 			dependencies = (
 			);
 			name = HVDataMigration;
-			productName = Test_DataMigration;
+			productName = HVDataMigration;
 			productReference = 3D8960511CDAE21A00C084E9 /* HVDataMigration.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -202,7 +202,7 @@
 				3D89606C1CDAE21A00C084E9 /* PBXTargetDependency */,
 			);
 			name = HVDataMigrationTests;
-			productName = Test_DataMigrationTests;
+			productName = HVDataMigrationTests;
 			productReference = 3D89606A1CDAE21A00C084E9 /* HVDataMigrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -220,7 +220,7 @@
 				3D8960771CDAE21A00C084E9 /* PBXTargetDependency */,
 			);
 			name = HVDataMigrationUITests;
-			productName = Test_DataMigrationUITests;
+			productName = HVDataMigrationUITests;
 			productReference = 3D8960751CDAE21A00C084E9 /* HVDataMigrationUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -235,6 +235,7 @@
 				TargetAttributes = {
 					3D8960501CDAE21A00C084E9 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = G3W338EUUT;
 					};
 					3D8960691CDAE21A00C084E9 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -511,8 +512,8 @@
 			baseConfigurationReference = F5A40893801B2D75068D9680 /* Pods-HVDataMigration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Test_DataMigration/Info.plist;
+				DEVELOPMENT_TEAM = G3W338EUUT;
+				INFOPLIST_FILE = HVDataMigration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harvey.Test-KeyValueStore";
@@ -525,8 +526,8 @@
 			baseConfigurationReference = 47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Test_DataMigration/Info.plist;
+				DEVELOPMENT_TEAM = G3W338EUUT;
+				INFOPLIST_FILE = HVDataMigration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harvey.Test-KeyValueStore";
@@ -538,7 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Test_DataMigrationTests/Info.plist;
+				INFOPLIST_FILE = HVDataMigrationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.william.Test-KeyValueStoreTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,7 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Test_DataMigrationTests/Info.plist;
+				INFOPLIST_FILE = HVDataMigrationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.william.Test-KeyValueStoreTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,11 +562,11 @@
 		3D8960851CDAE21A00C084E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Test_DataMigrationUITests/Info.plist;
+				INFOPLIST_FILE = HVDataMigrationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.william.Test-KeyValueStoreUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Test_DataMigration;
+				TEST_TARGET_NAME = HVDataMigration;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
@@ -573,11 +574,11 @@
 		3D8960861CDAE21A00C084E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Test_DataMigrationUITests/Info.plist;
+				INFOPLIST_FILE = HVDataMigrationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.william.Test-KeyValueStoreUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Test_DataMigration;
+				TEST_TARGET_NAME = HVDataMigration;
 				USES_XCTRUNNER = YES;
 			};
 			name = Release;
