@@ -151,13 +151,11 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
     if (self.dbVersion < HV_DB_CURRENT_VERSION) {
         
         // 1).旧表增加新的字段
-        
         // ALTER TABLE 表名 ADD 字段名 字段类型;
         [self hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
         
         
         // 2).重命名表
-        
         // ALTER TABLE 表名 RENAME TO 新表名;
         [self hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
         
@@ -264,8 +262,6 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
     
     __block BOOL result;
     NSString *sql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ TEXT",tableName,newColumnName];
-    
-    NSLog(@">>> add sql :%@",sql);
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
        
