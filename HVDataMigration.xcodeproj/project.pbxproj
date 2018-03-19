@@ -16,7 +16,6 @@
 		3D8960641CDAE21A00C084E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8960621CDAE21A00C084E9 /* LaunchScreen.storyboard */; };
 		3D8960891CDAE42600C084E9 /* HVKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */; };
 		3D8960921CDAE5D700C084E9 /* HVUserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960911CDAE5D700C084E9 /* HVUserStore.m */; };
-		3D8960B11CDC50E100C084E9 /* HVUserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D8960AF1CDC50E100C084E9 /* HVUserModel.xcdatamodeld */; };
 		B9A2780E205FFB6F00DB4807 /* HVFMDBMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A2780D205FFB6E00DB4807 /* HVFMDBMigration.m */; };
 		FAED07688CC0683BB2387F5E /* libPods-HVDataMigration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1D9894F8DC99B62DE90517 /* libPods-HVDataMigration.a */; };
 /* End PBXBuildFile section */
@@ -55,8 +54,6 @@
 		3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVKeyValueStore.m; sourceTree = "<group>"; };
 		3D8960901CDAE5D700C084E9 /* HVUserStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVUserStore.h; sourceTree = "<group>"; };
 		3D8960911CDAE5D700C084E9 /* HVUserStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HVUserStore.m; sourceTree = "<group>"; };
-		3D8960B01CDC50E100C084E9 /* HVUserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HVUserModel.xcdatamodel; sourceTree = "<group>"; };
-		3D8960B21CDC511700C084E9 /* HVUserModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HVUserModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		3FED3E12EC0B03BF29AAA72F /* libPods-HVDataMigration.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HVDataMigration.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B08F782EFEA6F6DC97158F /* Pods-HVDataMigration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HVDataMigration.release.xcconfig"; path = "Pods/Target Support Files/Pods-HVDataMigration/Pods-HVDataMigration.release.xcconfig"; sourceTree = "<group>"; };
 		B9A2780C205FFB6E00DB4807 /* HVFMDBMigration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HVFMDBMigration.h; sourceTree = "<group>"; };
@@ -138,7 +135,6 @@
 				3D8960911CDAE5D700C084E9 /* HVUserStore.m */,
 				3D8960871CDAE42600C084E9 /* HVKeyValueStore.h */,
 				3D8960881CDAE42600C084E9 /* HVKeyValueStore.m */,
-				3D8960AF1CDC50E100C084E9 /* HVUserModel.xcdatamodeld */,
 				3D89605D1CDAE21A00C084E9 /* Main.storyboard */,
 				3D8960601CDAE21A00C084E9 /* Assets.xcassets */,
 				3D8960621CDAE21A00C084E9 /* LaunchScreen.storyboard */,
@@ -350,7 +346,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D8960B11CDC50E100C084E9 /* HVUserModel.xcdatamodeld in Sources */,
 				3D89605C1CDAE21A00C084E9 /* ViewController.m in Sources */,
 				3D8960891CDAE42600C084E9 /* HVKeyValueStore.m in Sources */,
 				3D8960591CDAE21A00C084E9 /* AppDelegate.m in Sources */,
@@ -623,20 +618,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3D8960AF1CDC50E100C084E9 /* HVUserModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3D8960B21CDC511700C084E9 /* HVUserModel 2.xcdatamodel */,
-				3D8960B01CDC50E100C084E9 /* HVUserModel.xcdatamodel */,
-			);
-			currentVersion = 3D8960B21CDC511700C084E9 /* HVUserModel 2.xcdatamodel */;
-			path = HVUserModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3D8960491CDAE21A00C084E9 /* Project object */;
 }

@@ -215,7 +215,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
             if (!result)
             {
                 isRollBack = YES;
-                debugLog(@">>> Error insert to db failure <<<");
+                debugLog(@">>> Error: insert to db failure <<<");
             }
             
         }
@@ -226,7 +226,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
             if (isRollBack)
             {
                 [db rollback];
-                NSError* error = [NSError errorWithDomain:@"插入用户信息失败" code:0 userInfo:nil];
+                NSError* error = [NSError errorWithDomain:@">>> Error: insert to db failure <<<" code:0 userInfo:nil];
                 
                 if (completion) {
                     completion(error);
@@ -262,6 +262,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
     
     __block BOOL result;
     NSString *sql = [NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ TEXT",tableName,newColumnName];
+    debugLog(@">>> add new column:[%@], sqlStr: [%@]",newColumnName,sql);
     
     [self.dbQueue inDatabase:^(FMDatabase *db) {
        
@@ -273,6 +274,9 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
             if (!result) {
                 NSLog(@">>> Error: add new Column faild <<<");
             }
+        }else
+        {
+            debugLog(@">>> column[%@] isExists <<<",newColumnName);
         }
     }];
     
@@ -299,14 +303,19 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
     __block BOOL result;
     NSString *sql = [NSString stringWithFormat:@"ALTER TABLE %@ RENAME TO %@",oldTableName,newTableName];
     
+    debugLog(@">>> table rename sqlStr: %@",sql);
+    
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         
         if (![db tableExists:newTableName]) {
             result = [db executeUpdate:sql];
             
             if (!result) {
-                NSLog(@">>> Error: rename TableName <<<");
+                debugLog(@">>> Error: table rename failed <<<");
             }
+        }else
+        {
+            debugLog(@">>> the table:[%@] isExists <<<",newTableName);
         }
     }];
     

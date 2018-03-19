@@ -93,7 +93,6 @@
     NSError *error = nil;
     if (!dbManager.hasMigrationsTable) {
         resultState = [dbManager createMigrationsTable:&error];
-        debugLog(@">>> resultState %d",resultState);
     }
     
     HVFMDBMigration *migration_1 = [HVFMDBMigration migrationWithName:@"新增User表"
