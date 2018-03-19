@@ -55,7 +55,7 @@
     
     
     /**** 2. sqlite 插入模拟数据 *****/
-    for (NSInteger i = 0; i < 6; i ++) {
+    for (NSInteger i = 0; i < 600; i ++) {
         
         HVUserModel *user = [[HVUserModel alloc]init];
         

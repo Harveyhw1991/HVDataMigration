@@ -241,6 +241,28 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
             }
         }
     }];
+    
+    /*** 上面的代码同等与下面：开启事务，批量处理大批数据，提高效率 ***/
+    
+//    [self.dbQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+//
+//        NSString *sql = [NSString stringWithFormat:REPLACE_USER_SQL,HV_TABLE_NEWUSER];
+//
+//        BOOL result = [db executeUpdate:sql,user.uId,user.uName,user.uEmail];
+//
+//        if (!result)
+//        {
+//            debugLog(@">>> Error: insert to db failure <<<");
+//            *rollback = YES;
+//            NSError* error = [NSError errorWithDomain:@">>> Error: insert to db failure <<<" code:0 userInfo:nil];
+//
+//            if (completion) {
+//                completion(error);
+//            }
+//            return;
+//        }
+//    }];
+    
 }
 
 
