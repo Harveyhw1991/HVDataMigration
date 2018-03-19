@@ -34,12 +34,28 @@
      4.删除字段（sqlit3不支持字段的删除）
      
      */
-    
+#pragma mark - FMDB 手动进行迁移
 
     HVUserStore *userStore = [HVUserStore shareStore];
     
-    //**** 1. sqlite 插入模拟数据 *****
+    /**** 1. sqlite 增加新的字段，重命名表 ***/
+    [userStore hv_updateDBVerson];
     
+//    // 1).旧表增加新的字段
+//
+//    // ALTER TABLE 表名 ADD 字段名 字段类型;
+//    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
+//
+//
+//
+//    // 2).重命名表
+//
+//    // ALTER TABLE 表名 RENAME TO 新表名;
+//    [userStore hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
+    
+    
+    
+    /**** 2. sqlite 插入模拟数据 *****/
     for (NSInteger i = 0; i < 6; i ++) {
         
         HVUserModel *user = [[HVUserModel alloc]init];
@@ -49,33 +65,13 @@
         user.uEmail = [NSString stringWithFormat:@"hhhh_%ld@163.com",(long)i];
     
         [userStore hv_insertUser:user  completion:^(NSError *error) {
-           
             if (!error) {
                 NSLog(@">>> inser user success <<<");
             }
         }];
     }
     
-
-    /****  2.sqlite 增加新的字段,重命名表 ****/
-    
-    // 1).旧表增加新的字段
-    
-    // ALTER TABLE 表名 ADD 字段名 字段类型;
-    
-    [userStore hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
-    
-    
-    
-    // 2).重命名表
-    
-    // ALTER TABLE 表名 RENAME TO 新表名;
-    
-    [userStore hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
-    
- 
-    
-#pragma mark - sqlite 在数据迁移中的局限
+/*****  sqlite 在数据迁移中的局限  ******/
     
     /*
      

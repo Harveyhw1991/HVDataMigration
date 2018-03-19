@@ -25,7 +25,7 @@ typedef void(^CompletionBlock)(NSError *error);
 
 + (instancetype)shareStore;
 + (NSString *)hv_dbPath;
-
+- (void)hv_updateDBVerson;
 
 /**
  *  插入用户信息

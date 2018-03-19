@@ -76,7 +76,6 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
         }
         [userStore hv_fetchDBVersion];
-        [userStore hv_updateDBVerson];
     });
     
     return userStore;
@@ -142,6 +141,11 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
     }];
 }
 
+
+
+#pragma mark - public method
+
+
 - (void)hv_updateDBVerson
 {
     if (self.dbVersion < HV_DB_CURRENT_VERSION) {
@@ -156,8 +160,8 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
         
         // ALTER TABLE 表名 RENAME TO 新表名;
         [self hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
-
-
+        
+        
         // 更新数据库的最新版本号
         [self hv_setDBVersion:HV_DB_CURRENT_VERSION completion:nil];
     }
@@ -188,11 +192,6 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?,?)";
     }
 }
 
-
-
-
-
-#pragma mark - public method
 
 /**
  *  插入用户信息
