@@ -16,10 +16,8 @@
 
 @end
 
-
-static NSString *const HV_TABLE_INFO    = @"DB_INFO";
-static NSString *const HV_TABLE_USER    = @"userInfo";
-static NSString *const HV_TABLE_NEWUSER = @"newUserInfo";
+static NSString *const HV_TABLE_USER    = @"UserInfo";
+static NSString *const HV_TABLE_NEWUSER = @"User_Infos";
 
 typedef void(^CompletionBlock)(NSError *error);
 

@@ -23,23 +23,25 @@
 @end
 
 @interface HVUserStore ()
-
-@property (nonatomic, strong) FMDatabase *db;
+@property (nonatomic, copy) NSString *usrInfoName;
 @property (nonatomic, assign) NSInteger dbVersion;
 @end
 
 
-
 static NSString *const HV_DB_NAME = @"HV_DB.sqlite";
+static NSString *const HV_DB_ID   = @"ID_10086";
+static NSString *const HV_TABLE_DB_INFO = @"DB_INFO";
 static NSInteger const HV_DB_DEFAULT_VERSION = 1000;
-static NSInteger const HV_DB_CURRENT_VERSION = 4000;
+static NSInteger const HV_DB_CURRENT_VERSION = 1004;
 
 static NSString *const CREATE_DB_INFO_SQL =
 @"CREATE TABLE IF NOT EXISTS %@ ( \
+dbId    TEXT NOT NULL, \
 version INTERGER NOT NULL, \
-PRIMARY KEY(version)) \
+usrInfo TEXT NOT NULL, \
+PRIMARY KEY(dbId)) \
 ";
-static NSString *const REPLACE_DBVERSON_SQL  = @"REPLACE INTO %@ VALUES(%ld)";
+static NSString *const REPLACE_DBVERSON_SQL  = @"REPLACE INTO %@ VALUES(?,%ld,?)";
 static NSString *const SELECT_ALL_SQL = @"SELECT * from %@";
 
 
@@ -66,14 +68,14 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
         if (![HVUserStore hv_checkDB])
         {
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
-            [userStore createTableWithName:HV_TABLE_INFO bySQL:CREATE_DB_INFO_SQL];
+            [userStore createTableWithName:HV_TABLE_DB_INFO bySQL:CREATE_DB_INFO_SQL];
             [userStore createTableWithName:HV_TABLE_USER bySQL:CREATE_USER_TABLE_SQL];
             [userStore hv_addDBVersion:HV_DB_DEFAULT_VERSION completion:nil];
         }else
         {
             userStore = [[HVUserStore alloc]initDBWithName:HV_DB_NAME];
         }
-        
+        [userStore hv_fetchDBVersion];
         [userStore hv_updateDBVerson];
     });
     
@@ -97,25 +99,17 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
 }
 
 
-- (NSInteger)dbVersion
-{
-    if (_dbVersion <=0) {
-        _dbVersion = [self hv_fetchDBVersion];
-        return _dbVersion;
-    }
-    return _dbVersion;
-}
-
 - (NSInteger)hv_fetchDBVersion
 {
     __block NSInteger version = 0;
+    __block NSString *usrInfo;
     [self.dbQueue inDatabase:^(FMDatabase * _Nonnull db) {
         
-        NSString *sql = [NSString stringWithFormat:SELECT_ALL_SQL,HV_TABLE_INFO];
+        NSString *sql = [NSString stringWithFormat:SELECT_ALL_SQL,HV_TABLE_DB_INFO];
         FMResultSet *rs = [db executeQuery:sql];
         while ([rs next]) {
             version = [rs intForColumn:@"version"];
-            NSLog(@">>>>>>>");
+            usrInfo = [rs stringForColumn:@"usrInfo"];
         }
         [rs close];
         
@@ -123,6 +117,8 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
             version = HV_DB_DEFAULT_VERSION;
         }
     }];
+    self.dbVersion   = version;
+    self.usrInfoName = usrInfo;
     
     return version;
 }
@@ -137,40 +133,36 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
     
     [self.dbQueue inDatabase:^(FMDatabase * _Nonnull db) {
         
-        NSString *sql = [NSString stringWithFormat:REPLACE_DBVERSON_SQL,HV_TABLE_INFO,version];
+        NSString *sql = [NSString stringWithFormat:REPLACE_DBVERSON_SQL,HV_TABLE_DB_INFO,version];
     
-        BOOL result   = [db executeUpdate:sql];
+        BOOL result   = [db executeUpdate:sql,HV_DB_ID,HV_TABLE_USER];
         if (!result) {
-            debugLog(@">>> db[%@] add vesion faild.",HV_TABLE_INFO);
+            debugLog(@">>> db[%@] add vesion faild.",HV_TABLE_DB_INFO);
         }
     }];
 }
 
 - (void)hv_updateDBVerson
 {
-    self.dbVersion = [self hv_fetchDBVersion];
-    
     if (self.dbVersion != HV_DB_CURRENT_VERSION) {
         
         // 1).旧表增加新的字段
         
         // ALTER TABLE 表名 ADD 字段名 字段类型;
-        
         [self hv_addNewColumn:@"uEmail" toTableName:HV_TABLE_USER];
-        
-        [self hv_addNewColumn:@"uRemark" toTableName:HV_TABLE_USER];
         
         
         // 2).重命名表
         
-//        // ALTER TABLE 表名 RENAME TO 新表名;
-//        [self hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
-//
-//
+        // ALTER TABLE 表名 RENAME TO 新表名;
+        [self hv_renameTableName:HV_TABLE_USER toNewTableName:HV_TABLE_NEWUSER];
+
+
         // 更新数据库的最新版本号
         [self hv_addDBVersion:HV_DB_CURRENT_VERSION completion:nil];
     }
 }
+
 
 - (void)createTableWithName:(NSString *)tableName
                       bySQL:(NSString *)sqlStr
@@ -219,7 +211,7 @@ static NSString *const REPLACE_USER_SQL = @"REPLACE INTO %@ VALUES(?,?)";
         
         @try {
             
-            NSString *sql = [NSString stringWithFormat:REPLACE_USER_SQL,HV_TABLE_USER];
+            NSString *sql = [NSString stringWithFormat:REPLACE_USER_SQL,HV_TABLE_NEWUSER];
             
             BOOL result = [db executeUpdate:sql,user.uId,user.uName];
             
